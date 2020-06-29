@@ -5,5 +5,15 @@
 // CSS classes in a non-JS-based theme.
 import { css } from '@emotion/core';
 
-// import { fonts, colors, weights, mediaQueries } from './css-utils';
+// import { colors, fonts, weights, mediaQueries, baseFontSize, pxToRem } from './css-utils';
+import { mediaQueries, pxToRem } from './css-utils';
 
+export const stageMax = css`
+  padding: ${pxToRem(20)};
+  margin: 0 auto;
+  max-width: ${pxToRem(1200)};
+
+  ${mediaQueries.md} {
+    padding: ${pxToRem(60)} ${pxToRem(40)};
+  }
+`;

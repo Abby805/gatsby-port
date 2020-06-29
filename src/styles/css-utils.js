@@ -33,8 +33,6 @@ export const mediaQueries = breakpoints.reduce((acc, bp, i) => {
   return acc;
 }, {});
 
-
-
 /* Fonts */
 export const fonts = {
   serif: `'Crimson Text', serif`,
@@ -48,16 +46,12 @@ export const weights = {
   bold: `700`, /* Sans only */
 };
 
+/* pxToRem... as you might expect, converts pixels to rems */
 export const baseFontSize = `18`;
 
-
-
-/* pxToRem */
-
-// export const pxToRem = (px) => {
-
-// };
-
+export const pxToRem = (px) => {
+  return ((Math.round(px / baseFontSize * 1000) / 1000) + 'rem');
+};
 
 /* Colors */
 export const colors = {
