@@ -58,4 +58,23 @@ export const globalStyles = css`
     max-width: 100%;
     height: auto;
   }
+
+  h1,
+  h2 {
+    font-family: ${fonts.serif};
+    font-weight: ${weights.normal};
+  }
+
+  p {
+    margin-bottom: ${pxToRem(20)};
+
+    ${mediaQueries.md} {
+      font-size: ${pxToRem(22)};
+    }
+  }
+
+  strong,
+  b {
+    font-weight: ${weights.bold};
+  }
 `;
