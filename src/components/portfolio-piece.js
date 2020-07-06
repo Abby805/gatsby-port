@@ -8,7 +8,7 @@ import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
 
 import { css } from '@emotion/core';
-import { colors, weights, pxToRem, mediaQueries, visuallyHidden, btn } from '../styles';
+import { colors, weights, pxToRem, mediaQueries, visuallyHidden, btn, rgba } from '../styles';
 
 function PortPiece({ projectName, projectBlurb, projectUrl, projectImg, projectImgAlt }) {
 
@@ -29,7 +29,7 @@ function PortPiece({ projectName, projectBlurb, projectUrl, projectImg, projectI
       css={css`
         margin-top: ${pxToRem(30)};
         padding-top: ${pxToRem(40)};
-        border-top: solid ${pxToRem(2)} ${colors.gray};
+        border-top: solid ${pxToRem(2)} ${rgba(colors.gray, 25)};
 
         ${mediaQueries.md} {
           display: flex;

@@ -1,29 +1,6 @@
 /* eslint-disable import/prefer-default-export */
 /* Variables and functions for CSS-in-JS use */
 
-
-
-
-
-
-
-
-// // Font-related variables
-
-// $font-size-base: 18; // The default font size for your site. This gets used in
-// // the px-to-em() function used sitewide.
-
-// // Time out for a function
-// @function px-to-rem($number) {
-//   $raw: $number/$font-size-base;
-//   $rounded: ceil($raw * 1000)/1000;
-//   @return $rounded * 1rem;
-// }
-
-// // Spacing
-// $stage-max: px-to-rem(1200);
-
-
 /* Breakpoints & media queries */
 const breakpoints = [768, 1200];
 const names = [`md`, `lg`];
@@ -55,7 +32,22 @@ export const pxToRem = (px) => {
 
 /* Colors */
 export const colors = {
-  white: `#fff`,
-  gray: `#222`,
+  white: `#ffffff`,
+  gray: `#222222`,
   blue: `#369fb9`,
 };
+
+/* RGBA
+ * Takes a color variable, presumed to be a 6-digit hex value, and an alpha
+ * percentage, presumed to be a unit-less number between 0 and 100, 
+ * and spits out an rgba string 
+ * Adapted from https://css-tricks.com/converting-color-spaces-in-javascript/
+ */
+
+ export const rgba = (hex, alpha) => {
+   let r = '0x' + hex[1] + hex[2],
+       g = '0x' + hex[3] + hex[4],
+       b = '0x' + hex[5] + hex[6];
+
+    return 'rgba('+ +r + ',' + +g + ',' + +b + ',' + (alpha / 100).toFixed(2) +  ')';
+ };
