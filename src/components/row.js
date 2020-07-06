@@ -10,14 +10,15 @@ import { stageMax, colors, pxToRem, mediaQueries } from '../styles';
 
 const Row = ({ rowTitle, rowIntro, bgColor, children }) => {
 
-  // If the background is blue, the h2 should be white
-  // Otherwise the h2 should be blue
+  // Set text color based on background color
   const h2Color = (bgColor === 'blue') ? 'white' : 'blue';
+  const pColor = (bgColor === 'blue') ? 'gray' : 'white';
 
   return (
     <div 
       css={css`
         background: ${colors[bgColor]};
+        color: ${colors[pColor]}
       `}
     >
       <div css={stageMax}>

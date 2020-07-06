@@ -7,4 +7,4 @@ export {
   pxToRem,
 } from './css-utils';
 export { globalStyles } from './globalStyles';
-export { stageMax } from './custom-css';
+export { stageMax, visuallyHidden, btn } from './custom-css';
