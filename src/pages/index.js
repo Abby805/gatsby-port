@@ -29,6 +29,8 @@ const IndexPage = () => (
           <p>I led the theming effort for this Drupal 8 multisite featuring e-commerce integration, internationalization (i18n) for multiple languages, and numerous unique content types and views. Additionally, I had the opportunity to train the client's in-house development team, who were unfamiliar with Drupal, on how to leverage the theme for future additions to the multisite. I also performed extensive site-building and limited custom module development.</p>
         }
         projectUrl="https://www.optimumnutrition.com/en-us"
+        projectImg="glanbia-lg.jpg"
+        projectImgAlt="Screenshot of Optimum Nutrition homepage"
       />
     </Row>
     <Row rowTitle="Other Cool Clients" rowIntro="But wait! There's more!">
