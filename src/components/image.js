@@ -15,8 +15,8 @@ const Image = (props) => (
               name
 
               childImageSharp {
-                sizes(maxWidth: 600) {
-                  ...GatsbyImageSharpSizes
+                fluid(maxWidth: 560, quality: 100) {
+                  ...GatsbyImageSharpFluid
                 }
               }
             }
@@ -32,12 +32,12 @@ const Image = (props) => (
 
       if (!image) { return null; }
       
-      const imageSizes = image.node.childImageSharp.sizes;
+      const imageFluid = image.node.childImageSharp.fluid;
 
       return (
         <Img
           alt={props.altText}
-          sizes={imageSizes}
+          fluid={imageFluid}
         />
       );
     }}
