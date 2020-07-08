@@ -8,6 +8,7 @@ import SEO from "../components/seo"
 import Hero from "../components/hero"
 import Row from "../components/row"
 import PortPiece from "../components/portfolio-piece"
+import Callout from "../components/callout"
 
 const IndexPage = () => (
   <Layout>
@@ -114,6 +115,7 @@ const IndexPage = () => (
         </div>
       </div>
     </Row>
+    <Callout calloutText="Psst! Did I mention that I've spoken at DrupalCon and Drupal GovCon? Or that I'm an Acquia-Certified Front-End Specialist in Drupal 8?" />
   </Layout>
 )
 
