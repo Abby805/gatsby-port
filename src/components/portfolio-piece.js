@@ -4,25 +4,12 @@
 
 import React from "react"
 import PropTypes from "prop-types"
-import { useStaticQuery, graphql } from "gatsby"
-import Img from "gatsby-image"
+import Image from "../components/image"
 
 import { css } from '@emotion/core';
 import { colors, weights, pxToRem, mediaQueries, visuallyHidden, btn, rgba } from '../styles';
 
 function PortPiece({ projectName, projectBlurb, projectUrl, projectImg, projectImgAlt }) {
-
-  const data = useStaticQuery(graphql`
-    query {
-      placeholderImage: file(relativePath: { eq: "glanbia-lg.jpg" }) {
-        childImageSharp {
-          fluid(maxWidth: 560, quality: 100) {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
-    }
-  `);
 
   return (
     <section
@@ -37,7 +24,7 @@ function PortPiece({ projectName, projectBlurb, projectUrl, projectImg, projectI
           margin-top: ${pxToRem(60)};
           padding-top: ${pxToRem(60)};
 
-          &:nth-child(even) {
+          &:nth-of-type(even) {
             flex-direction: row-reverse;
           }
         }
@@ -53,7 +40,7 @@ function PortPiece({ projectName, projectBlurb, projectUrl, projectImg, projectI
           }
         `}
       >
-        <Img fluid={data.placeholderImage.childImageSharp.fluid} alt={projectImgAlt} />
+        <Image fileName={projectImg} altText={projectImgAlt} />
       </div>
       <div
         css={css`
