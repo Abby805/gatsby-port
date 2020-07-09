@@ -65,6 +65,17 @@ export const globalStyles = css`
     font-weight: ${weights.normal};
   }
 
+  h1 {
+    margin-bottom: ${pxToRem(30)};
+    font-size: ${pxToRem(44)};
+    line-height: 1.2;
+    color: ${colors.blue};
+
+    ${mediaQueries.md} {
+      font-size: ${pxToRem(74)};
+    }
+  }
+
   p {
     margin-bottom: ${pxToRem(20)};
 

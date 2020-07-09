@@ -45,20 +45,7 @@ function Hero({ pageTitle, introBlurb }) {
           `
         ]}
       >
-        <h1
-          css={css`
-            margin-bottom: ${pxToRem(30)};
-            font-size: ${pxToRem(44)};
-            line-height: 1.2;
-            color: ${colors.blue};
-
-            ${mediaQueries.md} {
-              font-size: ${pxToRem(74)};
-            }
-          `}
-        >
-          { pageTitle }
-         </h1>
+        <h1>{ pageTitle }</h1>
         { introBlurb }
       </div>
     </div>
