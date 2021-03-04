@@ -47,6 +47,7 @@ const Footer = () => (
     <p
       css={css`
         margin-bottom: 0;
+        font-size: ${pxToRem(18)};
       `}
     >
       Copyright © {new Date().getFullYear()} Abby Milberg
