@@ -2,46 +2,66 @@ import React from "react"
 import { StaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
 
-/* Inspired by https://noahgilmore.com/blog/easy-gatsby-image-components/ */
+/*
+ * Inspired by https://noahgilmore.com/blog/easy-gatsby-image-components/
+*/
 
-const Image = (props) => (
-  <StaticQuery
-    query={graphql`
-      query {
-        images: allFile {
-          edges {
-            node {
-              relativePath
-              name
+const Image = (props) => {
+  const imageStyle = props.imageStyle ? props.imageStyle : 'stageWidth';
 
-              childImageSharp {
-                fluid(maxWidth: 560, quality: 100) {
-                  ...GatsbyImageSharpFluid
+  return (
+    <StaticQuery
+      query={graphql`
+        query {
+          stageWidth: allFile {
+            edges {
+              node {
+                relativePath
+                name
+
+                childImageSharp {
+                  fluid(maxWidth: 1120, quality: 100) {
+                    ...GatsbyImageSharpFluid
+                  }
+                }
+              }
+            }
+          }
+          teaser: allFile {
+            edges {
+              node {
+                relativePath
+                name
+
+                childImageSharp {
+                  fluid(maxWidth: 727, quality: 100) {
+                    ...GatsbyImageSharpFluid
+                  }
                 }
               }
             }
           }
         }
-      }
-    `}
+      `}
 
-    render={(data) => {
-      const image = data.images.edges.find(n => {
-        return n.node.relativePath.includes(props.fileName);
-      });
+      render={(data) => {
+        const image = data[imageStyle].edges.find(n => {
+          return n.node.relativePath.includes(props.fileName);
+        });
 
-      if (!image) { return null; }
-      
-      const imageFluid = image.node.childImageSharp.fluid;
+        if (!image) { return null; }
 
-      return (
-        <Img
-          alt={props.altText}
-          fluid={imageFluid}
-        />
-      );
-    }}
-  />
-)
+        const imageFluid = image.node.childImageSharp.fluid;
+
+        return (
+          <Img
+            alt={props.altText}
+            fluid={imageFluid}
+          />
+        );
+      }}
+    />
+  )
+}
 
 export default Image;

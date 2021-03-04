@@ -5,6 +5,7 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Hero from "../components/hero"
 import Row from "../components/row"
+import Image from "../components/image"
 
 export default function Template({
   data, // this prop will be injected by the GraphQL query below.
@@ -21,6 +22,8 @@ export default function Template({
         }
       />
       <Row>
+        <Image fileName={frontmatter.featured_image} altText={frontmatter.image_alt} />
+
         <div
           dangerouslySetInnerHTML={{ __html: html }}
         />
@@ -37,6 +40,8 @@ export const pageQuery = graphql`
         date(formatString: "MMMM DD, YYYY")
         slug
         title
+        featured_image
+        image_alt
       }
     }
   }
